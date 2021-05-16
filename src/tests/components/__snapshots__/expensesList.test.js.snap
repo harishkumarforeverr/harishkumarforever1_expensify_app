@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test/components/expensesList should render expensesList correctly  1`] = `
+<div>
+  <ExpensesListItems
+    amount={300}
+    createdAt={0}
+    description="Gun"
+    id={0}
+    key="0"
+    notes="buying the gun"
+  />
+  <ExpensesListItems
+    amount={2500}
+    createdAt={-345600000}
+    description="rent"
+    id={1}
+    key="1"
+    notes="my house rent"
+  />
+  <ExpensesListItems
+    amount={8000}
+    createdAt={345600000}
+    description="creatied card"
+    id={2}
+    key="2"
+    notes="took creatied Card for my mom from SBI bank"
+  />
+</div>
+`;
+
+exports[`test/components/expensesList should render expensesList correctly  2`] = `
+<div>
+  <h4>
+    Zero exoenses  
+  </h4>
+</div>
+`;

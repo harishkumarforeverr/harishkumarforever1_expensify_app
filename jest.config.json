@@ -1,0 +1,22 @@
+{ 
+    "setupFiles" : [
+        "raf/polyfill",
+        "<rootDir>/src/tests/setupTests.js"
+    ] ,
+     
+    "snapshotSerializers" :[
+        "enzyme-to-json/serializer"
+    ],
+    
+    "preset": "ts-jest",
+
+    "transform": {
+        "^.+\\.(ts|tsx)?$": "ts-jest",
+        "^.+\\.(js|jsx)$": "babel-jest"
+      }  ,
+      
+      "moduleNameMapper":{
+          "\\.(css|less|scss|sss|styl)$" :"<rootDir>/nodule_modules/jest-css-modules" 
+      }   
+
+ }

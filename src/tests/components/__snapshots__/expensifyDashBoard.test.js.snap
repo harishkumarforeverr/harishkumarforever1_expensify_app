@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test/componenet/ExpensifyDashBoard should render it coreectly  1`] = `
+<div>
+  <Connect(ExpensesListFilters) />
+  <Connect(ExpensesList) />
+</div>
+`;

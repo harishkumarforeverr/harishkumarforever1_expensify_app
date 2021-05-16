@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`src/test/components/EditExpensesPage ::::::::: toMatchSnapshot  1`] = `
+<div>
+  <ExpanseForm
+    expense={
+      Object {
+        "amount": 8000,
+        "createdAt": 345600000,
+        "description": "creatied card",
+        "id": 2,
+        "notes": "took creatied Card for my mom from SBI bank",
+      }
+    }
+    onSubmit={[Function]}
+  />
+  <button
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+</div>
+`;

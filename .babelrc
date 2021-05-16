@@ -1,0 +1,13 @@
+{
+    "presets": ["react","env"],
+    "plugins":[
+        "transform-class-properties",
+        "transform-object-rest-spread"
+    ]
+    /* when you want to test your file uncomment it and 
+       when you want to run yarn run build or yarn run dev-server jeust comment it
+    */  
+    // ,"test":[
+    //     "jest"
+    // ]  
+} 

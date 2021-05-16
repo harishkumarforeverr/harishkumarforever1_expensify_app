@@ -1,0 +1,51 @@
+path 
+cd All P F\React\i-app
+
+file-maanger
+1) f4 to copy the url of any(current) folder, its very useffull for passing the folder destination in cmd by  (ctr+space in cmd)
+2) f2 to rename the folder/file name
+
+
+window command 
+1) window + up/down/left/right --> to make current window big or small
+2) press 0 for dragging using left/right/up/down of numbers to dragge the select area
+3)   cmd
+     0) alt+space for pasting the copying text and max/,in the window
+     1) start --> to  open multiple cmd 
+     2) tab for seeing all files/folders in that directity
+
+
+firefox short-cuts
+0)shift+ctr+i == to open the web devloper option
+1) shift+ctr+k == to open the consol
+
+
+
+chrome 
+1) F12 or alt+shift+j = will open browswer console
+2) ctrl+L will clear the browswer console 
+3) shift+enter to write multiple lines in browser console
+
+visual studio code 
+1) select a group/single line press ctr+[ or ctr+] to move left or right side to format
+2) ctr+shift+[  or ctr+shift+ ] to open or close the bracket code code
+3)ctr+shift+e ==> all folder will open then select a file and copy it and paste it
+     and now press f2 you will get a option to rename the file
+4) press ctr+space to get recoemdatation
+5)clt+D for selecting repeated values
+alt+shit+mouse = selected at repeated place according to oour wish
+6) press ctr+space you will give recommenatation from the vs code
+
+
+
+To rest vscode
+1st unistall the VSCode
+2nd to user/admin , then delete .vscode folder
+3rd then go "appdata" and delete "code" folder
+
+IDE
+1) <p> Lorem = will give dummy text by emmmet abbdrivation of IDE </p>
+
+      
+
+

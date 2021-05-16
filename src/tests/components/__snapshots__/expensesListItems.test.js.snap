@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test/componnets/expensesListItems  should render expensesListItems correctly 1`] = `
+<div>
+  <Link
+    to="/edit/1"
+  >
+     
+    <h3
+      className="expenses"
+    >
+         
+      rent
+       
+    </h3>
+     
+  </Link>
+  <p>
+      
+    2500
+     -- 
+    -345600000
+     
+  </p>
+  <hr />
+</div>
+`;
