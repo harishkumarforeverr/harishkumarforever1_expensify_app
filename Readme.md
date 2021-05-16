@@ -6,7 +6,8 @@ git commit-> used to commit the repo from the staging area
 git log --> to see the commits which we made to our local repository
 git status -> used to see the status of our  local repository
 
-
+#rufe
+ssh-keygen -t ed25519-sk -C "harishking809@gmail.com"
  
 the problem is dev-server is not working with i-app v2 version so
 we have changed the some code in 
