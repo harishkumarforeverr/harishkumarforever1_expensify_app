@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "server": "live-server public/",
-    "build": "webpack --watch",
+    "build": "webpack",
     "dev-server": "webpack serve",
     "test": "jest --config=jest.config.json --watchAll"
   },
@@ -56,11 +56,11 @@
     "style-loader": "^2.0.0",
     "ts-jest": "^26.5.6",
     "uuid": "^8.3.2",
-    "validator": "^13.6.0"
-  },
-  "devDependencies": {
+    "validator": "^13.6.0",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
+  },
+  "devDependencies": {
   }
 }

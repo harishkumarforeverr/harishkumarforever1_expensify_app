@@ -12,8 +12,8 @@ test('import filtersReducers from "../../reducer/filters" ::::: setUpDefaultVlau
     expect(action).toEqual({
         text: "",
         sortBy: "amount",
-        startDate: moment().startOf("month"),
-        endDate: moment().endOf("month")
+        startDate: undefined,//moment().startOf("month"),
+        endDate: undefined//moment().endOf("month")
     })
 })
 test('import filtersReducers from "../../reducer/filters" :::::  SET_TEXT_FILTER ',()=>{ 

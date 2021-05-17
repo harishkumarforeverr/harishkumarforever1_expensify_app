@@ -4620,9 +4620,11 @@ var AddExpensesPage = exports.AddExpensesPage = function (_React$Component) {
 }(_react2.default.Component);
 
 var mapDispatchToState = function mapDispatchToState(dispatch) {
-    addExpense: (function (expense) {
-        dispatch((0, _expenses.addExpense)(expense));
-    });
+    return {
+        addExpense: function addExpense(expense) {
+            dispatch((0, _expenses.addExpense)(expense));
+        }
+    };
 };
 
 exports.default = (0, _reactRedux.connect)(undefined, mapDispatchToState)(AddExpensesPage);
@@ -4713,12 +4715,14 @@ var EditExpensesPage = exports.EditExpensesPage = function (_React$Component) {
 }(_react2.default.Component);
 
 var mapDispatchToState = function mapDispatchToState(dispatch) {
-    editExpanse: (function (id, expense) {
-        dispatch((0, _expenses.editExpanse)(id, expense));
-    });
-    removeExpense: (function (id) {
-        dispatch((0, _expenses.removeExpense)({ id: id }));
-    });
+    return {
+        editExpanse: function editExpanse(id, expense) {
+            dispatch((0, _expenses.editExpanse)(id, expense));
+        },
+        removeExpense: function removeExpense(id) {
+            dispatch((0, _expenses.removeExpense)({ id: id }));
+        }
+    };
 };
 
 var mapStateToProps = function mapStateToProps(state, props) {
@@ -4769,9 +4773,9 @@ var ExpensesList = exports.ExpensesList = function ExpensesList(props) {
         'div',
         null,
         props.expenses.length === 0 ? _react2.default.createElement(
-            'h1',
+            'h4',
             null,
-            'no exoenses in yoour Cart '
+            'Zero exoenses  '
         ) : props.expenses.map(function (expense) {
             return _react2.default.createElement(_expensesListItems2.default, _extends({ key: expense.id }, expense));
         })
@@ -5033,8 +5037,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var filtersReducersDefaultState = {
     text: "",
     sortBy: "amount",
-    startDate: (0, _moment2.default)().startOf("month"),
-    endDate: (0, _moment2.default)().endOf("month")
+    startDate: undefined, //moment().startOf("month"),
+    endDate: undefined //moment().endOf("month")
 };
 
 exports.default = function () {
@@ -84871,14 +84875,6 @@ var _configStore = __webpack_require__(/*! ./store/configStore */ "./src/store/c
 
 var _configStore2 = _interopRequireDefault(_configStore);
 
-var _expenses = __webpack_require__(/*! ./actions/expenses */ "./src/actions/expenses.js");
-
-var _filters = __webpack_require__(/*! ./actions/filters */ "./src/actions/filters.js");
-
-var _expenses2 = __webpack_require__(/*! ./selectors/expenses */ "./src/selectors/expenses.js");
-
-var _expenses3 = _interopRequireDefault(_expenses2);
-
 __webpack_require__(/*! react-dates/lib/css/_datepicker.css */ "./node_modules/react-dates/lib/css/_datepicker.css");
 
 __webpack_require__(/*! normalize.css/normalize.css */ "./node_modules/normalize.css/normalize.css");
@@ -84888,35 +84884,7 @@ __webpack_require__(/*! ./styles/styles.scss */ "./src/styles/styles.scss");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // the import belong to the src/componnet/ExpensesListFilters
-
-// import moment from "moment";
 var store = (0, _configStore2.default)();
-
-store.dispatch((0, _expenses.addExpense)({
-    description: "water bill",
-    note: "",
-    amount: 450,
-    createdAt: 1998
-}));
-
-store.dispatch((0, _expenses.addExpense)({
-    description: "Gas bill",
-    note: "",
-    amount: 1000,
-    createdAt: 2021
-}));
-
-store.dispatch((0, _expenses.addExpense)({
-    description: "rent",
-    note: "",
-    amount: 109500,
-    createdAt: 2010
-}));
-
-var state = store.getState();
-var visibleExpenses = (0, _expenses3.default)(state.expenses, state.filters);
-
-// console.log(visibleExpenses);
 
 var jsx = _react2.default.createElement(
     "div",
@@ -84927,11 +84895,7 @@ var jsx = _react2.default.createElement(
         _react2.default.createElement(_AppRouter2.default, null)
     )
 );
-
 _reactDom2.default.render(jsx, document.getElementById("app"));
-
-// console.log(moment().startOf("month"));
-// console.log(moment().endOf("month"));
 })();
 
 /******/ })()
