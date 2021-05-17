@@ -16,11 +16,9 @@ exports[`test/componnets/expensesListItems  should render expensesListItems corr
      
   </Link>
   <p>
-      
-    2500
-     -- 
-    -345600000
-     
+    $25.0000
+    --
+    December 28th, 1969
   </p>
   <hr />
 </div>

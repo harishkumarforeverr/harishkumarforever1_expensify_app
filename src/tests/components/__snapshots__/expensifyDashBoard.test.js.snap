@@ -2,6 +2,7 @@
 
 exports[`test/componenet/ExpensifyDashBoard should render it coreectly  1`] = `
 <div>
+  <Connect(ExpensesSummary) />
   <Connect(ExpensesListFilters) />
   <Connect(ExpensesList) />
 </div>
