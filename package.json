@@ -7,6 +7,7 @@
   "license": "ISC",
   "scripts": {
     "server": "live-server public/",
+    "build:prod": "webpack --env=production",
     "build": "webpack",
     "dev-server": "webpack serve",
     "test": "jest --config=jest.config.json --watchAll"
@@ -36,6 +37,7 @@
     "jest": "^26.6.3",
     "jest-css-modules": "^2.1.0",
     "live-server": "^1.2.1",
+    "mini-css-extract-plugin": "^1.6.0",
     "moment": "^2.29.1",
     "node-sass": "^5.0.0",
     "normalize.css": "^8.0.1",
@@ -61,6 +63,5 @@
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

@@ -9,6 +9,7 @@ import "./styles/styles.scss";
 
 const store=configStore();  
 
+console.log("testing");
 const jsx=(
     <div>
         <Provider store={store}>
