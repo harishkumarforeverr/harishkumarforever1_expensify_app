@@ -8,9 +8,9 @@
   "scripts": {
     "server": "live-server public/",
     "build:prod": "webpack --env=production",
-    "build": "webpack",
-    "dev-server": "webpack serve",
-    "test": "jest --config=jest.config.json --watchAll",
+    "build": "cross-env NODE_ENV=development webpack",
+    "dev-server": "cross-env NODE_ENV=development webpack serve",
+    "test": "cross-env NODE_ENV=test jest  --config=jest.config.json --watchAll",
     "start":"node server/server.js",
     "heroku-postbuild":"yarn run build:prod"
   },
