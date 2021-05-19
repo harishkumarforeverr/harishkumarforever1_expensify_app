@@ -95,3 +95,16 @@ test('import expenseReducer from "../../reducer/expenses" ::::::: EDIT_EXPANSE s
     expect(state).toEqual(expenses);
 });
  
+test("should hanndle expenses in the reducers SET_EXPENSES",()=>{
+    const action={
+        type:"SET_EXPENSES",
+        expenses:{
+            description:"jajja",
+            amount:1000,
+            note:"kalla",
+            createdAt:1010       
+        }
+    }
+    const state=expenseReducer(expenses,action);
+    expect(state).toEqual(action.expenses);
+});

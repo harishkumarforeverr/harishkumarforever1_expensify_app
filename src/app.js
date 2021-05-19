@@ -3,10 +3,12 @@ import ReactDOM from "react-dom";
 import {Provider} from "react-redux";
 import AppRouter from "./routers/AppRouter";
 import configStore from "./store/configStore";
+import {startSetExpenses} from "./actions/expenses";
 import 'react-dates/lib/css/_datepicker.css';  // the import belong to the src/componnet/ExpensesListFilters
 import "normalize.css/normalize.css"
 import "./styles/styles.scss";  
 import "./firebase/firebase";
+
 // import "./playground/promises";
 
 const store=configStore();   
@@ -18,4 +20,10 @@ const jsx=(
         </Provider>
     </div>
 ) 
-ReactDOM.render(jsx, document.getElementById("app")); 
+
+ReactDOM.render(<h1>loading</h1>, document.getElementById("app")); 
+
+store.dispatch(startSetExpenses()).then(()=>{
+    ReactDOM.render(jsx, document.getElementById("app")); 
+})
+

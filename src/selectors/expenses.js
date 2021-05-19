@@ -1,4 +1,4 @@
-export default (expenses, {text,sortBy, startDate,endDate}) =>{   
+export default (expenses, {text,sortBy, startDate,endDate}) =>{    
     return expenses.filter((expense)=>{   
         const startDateMatch =  startDate ? startDate.isSameOrBefore(expense.createdAt) : true ;
         const endDateMatch=  endDate ? endDate.isSameOrAfter(expense.createdAt): true;
