@@ -7,7 +7,7 @@ import 'react-dates/lib/css/_datepicker.css';  // the import belong to the src/c
 import "normalize.css/normalize.css"
 import "./styles/styles.scss";  
 import "./firebase/firebase";
-import "./playground/promises";
+// import "./playground/promises";
 
 const store=configStore();   
 
