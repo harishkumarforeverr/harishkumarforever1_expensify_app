@@ -6,7 +6,9 @@ import {setExpenses,
         editExpanse,
         removeExpense,
         StartAddExpense ,
-        startSetExpenses
+        startSetExpenses,
+        startRemoveExpense,
+        startEditExpense
        }
        from '../../actions/expenses';
 import expenses from "../fixtures/expenses";
@@ -171,21 +173,80 @@ test("../../actions/expenses should setup  addExpense with values expense action
 
 test("../../actions/expeneses setExpenses ",()=>{
       const state=setExpenses(expenses);
-      expect(state).toEqual({
+     expect(state).toEqual({
         type:"SET_EXPENSES",
-        expenses
+        expense:expenses
       })
 })
 
 
 // pending 
-// test("src/test/actions/expenese/startSetExpenses:::: should get expenses from the firebase and set redux store",(done)=>{
-//   const store=createMockStore({});
-//     store.dispatch(startSetExpenses());
-//     const action=store.getActions();
-//     expect(action[0]).toEqual({
-//       type:"SET_EXPENSES",
-//       expense:expenses
-//     })
-//     done(); 
-// })
+test("src/test/actions/expenese/startSetExpenses:::: should get expenses from the firebase and set redux store",(done)=>{
+    const store=createMockStore({});
+    store.dispatch(startSetExpenses()).then(()=>{ 
+      const action=store.getActions(); 
+      expect(action[0]).toEqual({
+        type:"SET_EXPENSES",
+        expense:[
+          {
+            ...expenses[0],
+            id:JSON.stringify(expenses[0].id)
+          },
+          {
+            ...expenses[1],
+            id:JSON.stringify(expenses[1].id)
+          },
+          {
+            ...expenses[2],
+            id:JSON.stringify(expenses[2].id)
+          }
+        ]
+      })
+      done(); 
+    });
+})
+
+// pending
+test("src/test/actions/expenese/startRemoveExpense:::: shouldremove expenses from the firebase and remove redux store",(done)=>{
+   const store=createMockStore(expenses);
+        store.dispatch(startRemoveExpense({id:expenses[1].id})).then(()=>{
+          const action=store.getActions();
+          expect(action[0]).toEqual({ 
+              type: "REMOVE_EXPENSE",
+              id:expenses[1].id
+          })
+           return database.ref(`expenses/${expenses[1].id}`).once("value");
+        }).then((snapshot)=>{
+          expect(JSON.stringify(snapshot)).toBe(JSON.stringify(null)); 
+          done();
+        })
+}) 
+
+
+// pending
+test("src/test/actions/expenese/startEditExpense:::: shouldremove expenses from the firebase and remove redux store",(done)=>{
+   const store=createMockStore(expenses);
+        store.dispatch(startEditExpense(expenses[1].id, {
+          description:"school fee",
+          amount:10000,      
+        })).then(()=>{
+          const action=store.getActions();
+          expect(action[0]).toEqual({ 
+              type: "EDIT_EXPANSE",
+              id:expenses[1].id,
+              update:{  
+                amount:10000,
+                description:"school fee"
+              }
+
+          })
+           return database.ref(`expenses/${expenses[1].id}`).once("value");
+        }).then((snapshot)=>{
+          expect(snapshot.val()).toEqual({
+              ...expenses[1],
+              amount:10000,
+              description:"school fee"
+          });
+          done();
+        })
+})  
