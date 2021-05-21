@@ -390,13 +390,13 @@ exports[`src/test/componet/ExpanseForm  :: should render component correctly 2`]
       onChange={[Function]}
       placeholder="add your expanses"
       type="text"
-      value="creatied card"
+      value="phone Reacharge"
     />
     <input
       onChange={[Function]}
       placeholder="add amount"
       type="number"
-      value="80"
+      value="6"
     />
     <withStyles(SingleDatePicker)
       anchorDirection="left"

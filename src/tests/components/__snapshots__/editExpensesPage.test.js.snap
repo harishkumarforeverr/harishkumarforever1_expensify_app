@@ -5,9 +5,9 @@ exports[`src/test/components/EditExpensesPage ::::::::: toMatchSnapshot  1`] = `
   <ExpanseForm
     expense={
       Object {
-        "amount": 8000,
+        "amount": 600,
         "createdAt": 345600000,
-        "description": "creatied card",
+        "description": "phone Reacharge",
         "id": 2,
         "notes": "took creatied Card for my mom from SBI bank",
       }

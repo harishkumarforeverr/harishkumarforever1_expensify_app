@@ -1,6 +1,6 @@
 import firebase from "firebase/app"; 
 import "firebase/database";
-
+import "firebase/auth";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -12,12 +12,13 @@ const firebaseConfig = {
     appId: process.env.FIREBASE_APP_ID,
     measurementId: process.env.FIREBASE_MEASUREMENT_ID
   };
-
+                       
 firebase.initializeApp(firebaseConfig);
 
+const GoogleAuthProvider=new firebase.auth.GoogleAuthProvider();
 const database=firebase.database();
 
-export {firebase, database as default}
+export {firebase,GoogleAuthProvider, database as default}
 
 
 

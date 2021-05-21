@@ -11,8 +11,8 @@
     "build": "cross-env NODE_ENV=development webpack",
     "dev-server": "cross-env NODE_ENV=development webpack serve",
     "test": "cross-env NODE_ENV=test jest  --config=jest.config.json --watchAll",
-    "start":"node server/server.js",
-    "heroku-postbuild":"yarn run build:prod"
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "@babel/preset-env": "^7.14.2",
@@ -31,7 +31,7 @@
     "express": "^4.17.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "firebase": "^8.5.0",
-    "history": "^5.0.0",
+    "history": "4.10.1",
     "jest-css-modules": "^2.1.0",
     "live-server": "^1.2.1",
     "mini-css-extract-plugin": "^1.6.0",

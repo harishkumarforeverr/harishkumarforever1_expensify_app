@@ -10,7 +10,7 @@ exports[`test/componnets/expensesListItems  should render expensesListItems corr
       className="expenses"
     >
          
-      rent
+      my room rent
        
     </h3>
      

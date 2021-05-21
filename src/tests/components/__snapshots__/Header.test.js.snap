@@ -7,7 +7,6 @@ exports[`should render Header correctly ::::  1`] = `
   </h1>
   <NavLink
     activeClassName="is-active"
-    exact={true}
     to="/"
   >
     DashBoard
@@ -18,5 +17,10 @@ exports[`should render Header correctly ::::  1`] = `
   >
     CreateExpense
   </NavLink>
+  <button
+    onClick={[Function]}
+  >
+    logOut
+  </button>
 </header>
 `;
