@@ -4,7 +4,7 @@ import AuthReducer from "../reducer/auth";
 import expenseReducer from  "../reducer/expenses";
 import filtersReducer from "../reducer/filters";
 
-const composeEnchancer=window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const composeEnchancer=window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export default ()=>{
     const store = 
     createStore(
@@ -13,9 +13,9 @@ export default ()=>{
                     filters: filtersReducer,
                     auth:AuthReducer
                     }), 
-                 composeEnchancer(applyMiddleware(thunk))
+                //  composeEnchancer(applyMiddleware(thunk))
                 // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-                // applyMiddleware(thunk)
+                applyMiddleware(thunk)
                 );
     return store;
 }
