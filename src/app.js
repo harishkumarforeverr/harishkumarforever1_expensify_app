@@ -25,32 +25,41 @@ const jsx=(
 ) 
 
 
-ReactDOM.render(<h1>loading</h1>, document.getElementById("app"));  
+//offline mode
+ReactDOM.render(jsx, document.getElementById("app")); 
+store.dispatch(setExpenses(expenses));
+// offline mode ends her
 
-let isUserInterfaceRendered=false;
-const AppRenderer=()=>{ 
-    if(!isUserInterfaceRendered){ 
-        ReactDOM.render(jsx, document.getElementById("app")); 
-        isUserInterfaceRendered=true;
-    }
-}
 
- firebase.auth().onAuthStateChanged((user)=>{
-      if(user){
-          const uid=user.uid; 
-          store.dispatch(Login(uid)); 
-           store.dispatch(startSetExpenses()).then(()=>{ 
-                AppRenderer();        
-                if(history.location.pathname==='/'){   
-                    history.push("/dashboard");
-                }
-           })
-           console.log("Login"); 
-      }
-      else{
-       store.dispatch(Logout());
-        console.log("Logout");
-         AppRenderer();
-         history.push("/");
-       }
- })
+
+
+//online mode
+// ReactDOM.render(<h1>loading</h1>, document.getElementById("app"));  
+
+// let isUserInterfaceRendered=false;
+// const AppRenderer=()=>{ 
+//     if(!isUserInterfaceRendered){ 
+//         ReactDOM.render(jsx, document.getElementById("app")); 
+//         isUserInterfaceRendered=true;
+//     }
+// }
+
+//  firebase.auth().onAuthStateChanged((user)=>{
+//       if(user){
+//           const uid=user.uid; 
+//           store.dispatch(Login(uid)); 
+//            store.dispatch(startSetExpenses()).then(()=>{ 
+//                 AppRenderer();        
+//                 if(history.location.pathname==='/'){   
+//                     history.push("/dashboard");
+//                 }
+//            })
+//            console.log("Login"); 
+//       }
+//       else{
+//        store.dispatch(Logout());
+//         console.log("Logout");
+//          AppRenderer();
+//          history.push("/");
+//        }
+//  })

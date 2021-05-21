@@ -1,0 +1,21 @@
+.box-layout{
+  align-items: center;
+  background: url("/images/harish.jpg");
+  background-size: cover; 
+  color:white;
+  display: flex;
+  height: 100vh;
+  justify-content:space-around;
+  width: 100vw;
+}
+.box-layout__box{ 
+  align-items: center;
+  background-color: fade-out(black, 0.4);
+  border-radius: 3px; 
+  padding: $m-size $m-size;  
+  text-align: center;
+}
+.box-layout__title{
+  line-height: 1;
+  margin: 0 0 $m-size 0;
+}

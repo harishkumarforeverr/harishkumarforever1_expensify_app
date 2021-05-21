@@ -31,7 +31,8 @@ export const PrivateRoute =(
 
 const mapStateToProps=(state)=>{
     return {
-        Authentication:state.auth.uid
+        // Authentication:state.auth.uid //online mode
+        Authentication:true //offline mode
     }
 }
 

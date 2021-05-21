@@ -8,8 +8,10 @@ import helpPage from "../components/helpPage";
 import pageNotFound from "../components/pageNotFound";
 import LoginPage from "../components/LoginPage";
 import PrivateRoute from "./PrivateRoute";
-import PublicRoute from "./PublicRoute";
+import PublicRoute from "./PublicRoute"; 
 
+
+import Header from "../components/Header";
 
 export const history=createBrowserHistory();
 
@@ -17,6 +19,7 @@ const AppRouter=()=>(
     <Router  history={history} >
         <div>
             <Switch>
+                
                 <PublicRoute path="/" component={LoginPage} exact={true} />
                 <PrivateRoute path="/dashboard" component={expensifyDashBoard}  />
                 <PrivateRoute path="/create" component={addExpensesPage} />

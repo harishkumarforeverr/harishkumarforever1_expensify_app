@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js add build:prod
+  C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\yarn\bin\yarn.js add history@4.10.0
 
 PATH: 
-  C:\Program Files\Common Files\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\10.2.0\server\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\TDM-GCC-32\bin;C:\Users\Administrator\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_251\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Roaming\nvm;C:\Program Files\nodejs
+  C:\Program Files\Common Files\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\10.2.0\server\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\TDM-GCC-32\bin;C:\Users\Administrator\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_251\bin;C:\Users\Administrator\AppData\Roaming\npm;C:\Users\Administrator\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\heroku\bin
 
 Yarn version: 
   1.22.10
@@ -14,17 +14,8 @@ Platform:
   win32 ia32
 
 Trace: 
-  Error: build:prod: Invalid protocol: build:
-      at Request.module.exports.Request.init (C:\Users\Administrator\AppData\Roaming\nvm\v12.19.0\node_modules\yarn\lib\cli.js:140931:31)
-      at new Request (C:\Users\Administrator\AppData\Roaming\nvm\v12.19.0\node_modules\yarn\lib\cli.js:140604:8)
-      at request (C:\Users\Administrator\AppData\Roaming\nvm\v12.19.0\node_modules\yarn\lib\cli.js:136804:10)
-      at RequestManager.execute (C:\Users\Administrator\AppData\Roaming\nvm\v12.19.0\node_modules\yarn\lib\cli.js:67040:15)
-      at RequestManager.shiftQueue (C:\Users\Administrator\AppData\Roaming\nvm\v12.19.0\node_modules\yarn\lib\cli.js:67078:10)
-      at C:\Users\Administrator\AppData\Roaming\nvm\v12.19.0\node_modules\yarn\lib\cli.js:66747:13
-      at new Promise (<anonymous>)
-      at new F (C:\Users\Administrator\AppData\Roaming\nvm\v12.19.0\node_modules\yarn\lib\cli.js:5301:28)
-      at RequestManager.request (C:\Users\Administrator\AppData\Roaming\nvm\v12.19.0\node_modules\yarn\lib\cli.js:66745:19)
-      at NpmRegistry.<anonymous> (C:\Users\Administrator\AppData\Roaming\nvm\v12.19.0\node_modules\yarn\lib\cli.js:31704:42)
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
 
 npm manifest: 
   {
@@ -37,9 +28,11 @@ npm manifest:
     "scripts": {
       "server": "live-server public/",
       "build:prod": "webpack --env=production",
-      "build": "webpack",
-      "dev-server": "webpack serve",
-      "test": "jest --config=jest.config.json --watchAll"
+      "build": "cross-env NODE_ENV=development webpack",
+      "dev-server": "cross-env NODE_ENV=development webpack serve",
+      "test": "cross-env NODE_ENV=test jest  --config=jest.config.json --watchAll",
+      "start": "node server/server.js",
+      "heroku-postbuild": "yarn run build:prod"
     },
     "dependencies": {
       "@babel/preset-env": "^7.14.2",
@@ -55,15 +48,10 @@ npm manifest:
       "cross-env": "^7.0.3",
       "css-loader": "^5.2.4",
       "dotenv": "^9.0.0",
-      "enzyme": "^3.11.0",
-      "enzyme-adapter-react-15": "^1.4.3",
-      "enzyme-adapter-react-16": "^1.15.6",
-      "enzyme-to-json": "^3.6.2",
       "express": "^4.17.1",
       "extract-text-webpack-plugin": "^3.0.2",
       "firebase": "^8.5.0",
-      "history": "^5.0.0",
-      "jest": "^26.6.3",
+      "history": "4.10.1",
       "jest-css-modules": "^2.1.0",
       "live-server": "^1.2.1",
       "mini-css-extract-plugin": "^1.6.0",
@@ -79,7 +67,6 @@ npm manifest:
       "react-modal": "^3.13.1",
       "react-redux": "^7.2.4",
       "react-router-dom": "^5.2.0",
-      "react-test-renderer": "^17.0.2",
       "redux": "^4.1.0",
       "redux-mock-store": "^1.5.4",
       "redux-thunk": "^2.3.0",
@@ -89,10 +76,17 @@ npm manifest:
       "uuid": "^8.3.2",
       "validator": "^13.6.0",
       "webpack": "^5.36.2",
-      "webpack-cli": "^4.6.0",
-      "webpack-dev-server": "^3.11.2"
+      "webpack-cli": "^4.6.0"
     },
-    "devDependencies": {}
+    "devDependencies": {
+      "enzyme": "^3.11.0",
+      "enzyme-adapter-react-15": "^1.4.3",
+      "enzyme-adapter-react-16": "^1.15.6",
+      "enzyme-to-json": "^3.6.2",
+      "jest": "^26.6.3",
+      "react-test-renderer": "^17.0.2",
+      "webpack-dev-server": "^3.11.2"
+    }
   }
 
 yarn manifest: 
