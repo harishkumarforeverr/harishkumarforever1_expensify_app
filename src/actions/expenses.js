@@ -44,13 +44,10 @@ export const editExpanse = (id, update) => ({
 })
 
 
-export const startEditExpense=(id,update)=>{
+export const startEditExpense=(id,updates)=>{
     return (dispatch,getState)=>{
-         const  uid=getState().auth.uid;
-        return  database.ref(`users/${uid}/expenses/${id}`).update({ 
-               id,
-            ...update          
-         }).then(()=>{
+         const uid=getState().auth.uid;
+        return  database.ref(`users/${uid}/expenses/${id}`).update(updates).then(()=>{
              dispatch(editExpanse(id,update));
          })
     }
