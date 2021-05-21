@@ -7,10 +7,11 @@ export const addExpense = (expense) => ({
 });
 //StartAddExpense
 export const StartAddExpense=(expense={})=>{
-    return (dispatch)=>{
+    return (dispatch,getState)=>{
+         const uid=getState().auth.uid;
           const { description = "",  note = "", amount = 0, createdAt = 0  }=expense
           const addingExpensesObject={description,note,amount,createdAt };
-          return database.ref("expenses").push(addingExpensesObject).then((snapshot)=>{
+          return database.ref(`users/${uid}/expenses`).push(addingExpensesObject).then((snapshot)=>{
               dispatch(addExpense({
                   id:snapshot.key,
                   ...addingExpensesObject
@@ -27,8 +28,9 @@ export const removeExpense = ({ id } = {}) => ({
 });
 
 export const startRemoveExpense=({ id })=>{ 
-    return (dispatch)=>{
-           return database.ref(`expenses/${id}`).remove().then(()=>{
+    return (dispatch,getState)=>{
+            const uid=getState().auth.uid;
+           return database.ref(`users/${uid}/expenses/${id}`).remove().then(()=>{
                dispatch(removeExpense({ id }));
            })
     }
@@ -43,8 +45,9 @@ export const editExpanse = (id, update) => ({
 
 
 export const startEditExpense=(id,update)=>{
-    return (dispatch)=>{
-        return  database.ref(`expenses/${id}`).update({ 
+    return (dispatch,getState)=>{
+         const  uid=getState().auth.uid;
+        return  database.ref(`users/${uid}/expenses/${id}`).update({ 
                id,
             ...update          
          }).then(()=>{
@@ -59,8 +62,9 @@ export const setExpenses=(expense)=>({
 })
 
 export const startSetExpenses=()=>{
-    return (dispatch)=>{
-        return database.ref("expenses").once("value").then((snapshot)=>{   
+    return (dispatch,getState)=>{
+        const uid=getState().auth.uid;
+        return database.ref(`users/${uid}/expenses`).once("value").then((snapshot)=>{   
             const expenses=[];
             snapshot.forEach((childSnapShot)=>{     
                 expenses.push({
