@@ -71,11 +71,11 @@ export default class ExpanseForm extends React.Component{
       }
     }
     render(){
-        return ( 
-            <div>
-             {this.state.formErrorMessage && <h4> {this.state.formErrorMessage} </h4>}
-            <form onSubmit={this.onSubmit}>
-              <input
+        return (   
+            <form className="form" onSubmit={this.onSubmit}>
+             {this.state.formErrorMessage && <h4 className="form__error"> {this.state.formErrorMessage} </h4>}
+              <input 
+              className="text-input"
                type="text"
                value={this.state.description}
                placeholder="add your expanses" 
@@ -83,6 +83,7 @@ export default class ExpanseForm extends React.Component{
                onChange={this.onDescriptionChange}
                />
                <input 
+               className="text-input"
                type="number" 
                placeholder="add amount" 
                value={this.state.amount}
@@ -97,16 +98,17 @@ export default class ExpanseForm extends React.Component{
                isOutsideRange={()=>false}
                />
                <textarea
+               className="textarea"
                placeholder="add a notes to your expenses (Optional !)"
                value={this.state.note}
                onChange={this.onNotesChange}
                >
 
                </textarea>
-
-               <button> Add Expense </button>
-            </form>
-            </div>
+               <div> 
+                    <button class="button"> Save Expense </button>
+               </div>
+            </form> 
         );
     }
 }

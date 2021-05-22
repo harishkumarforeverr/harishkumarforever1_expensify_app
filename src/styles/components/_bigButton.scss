@@ -15,3 +15,9 @@
 .button--link{
     background:none;
 }
+
+.button-secondary{
+    @extend .button;
+    background-color:#888888;
+
+}

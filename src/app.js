@@ -25,41 +25,41 @@ const jsx=(
 ) 
 
 
-//offline mode
-ReactDOM.render(jsx, document.getElementById("app")); 
-store.dispatch(setExpenses(expenses));
-// offline mode ends her
+// //offline mode
+// ReactDOM.render(jsx, document.getElementById("app")); 
+// store.dispatch(setExpenses(expenses));
+// // offline mode ends her
 
 
 
 
-//online mode
-// ReactDOM.render(<h1>loading</h1>, document.getElementById("app"));  
+online mode
+ReactDOM.render(<h1>loading</h1>, document.getElementById("app"));  
 
-// let isUserInterfaceRendered=false;
-// const AppRenderer=()=>{ 
-//     if(!isUserInterfaceRendered){ 
-//         ReactDOM.render(jsx, document.getElementById("app")); 
-//         isUserInterfaceRendered=true;
-//     }
-// }
+let isUserInterfaceRendered=false;
+const AppRenderer=()=>{ 
+    if(!isUserInterfaceRendered){ 
+        ReactDOM.render(jsx, document.getElementById("app")); 
+        isUserInterfaceRendered=true;
+    }
+}
 
-//  firebase.auth().onAuthStateChanged((user)=>{
-//       if(user){
-//           const uid=user.uid; 
-//           store.dispatch(Login(uid)); 
-//            store.dispatch(startSetExpenses()).then(()=>{ 
-//                 AppRenderer();        
-//                 if(history.location.pathname==='/'){   
-//                     history.push("/dashboard");
-//                 }
-//            })
-//            console.log("Login"); 
-//       }
-//       else{
-//        store.dispatch(Logout());
-//         console.log("Logout");
-//          AppRenderer();
-//          history.push("/");
-//        }
-//  })
+ firebase.auth().onAuthStateChanged((user)=>{
+      if(user){
+          const uid=user.uid; 
+          store.dispatch(Login(uid)); 
+           store.dispatch(startSetExpenses()).then(()=>{ 
+                AppRenderer();        
+                if(history.location.pathname==='/'){   
+                    history.push("/dashboard");
+                }
+           })
+           console.log("Login"); 
+      }
+      else{
+       store.dispatch(Logout());
+        console.log("Logout");
+         AppRenderer();
+         history.push("/");
+       }
+ })

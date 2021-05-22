@@ -1,16 +1,15 @@
 .input-group{
   display: flex;
-  flex-direction: column;
+  flex-direction: column;    
   margin-bottom: $m-size;
   @media(min-width:$disktop-breakPoint){ 
     flex-direction: row;
-    margin-right: $l-size;
-  }
+  }  
 }
 .input-group__item{
-  margin-bottom: $m-size ; 
+  margin: 0 0 $m-size $l-size;  
   @media(min-width:$disktop-breakPoint){ 
-    margin-right : $xl-size ; 
+    margin-left : $xl-size ; 
   }
 }
 

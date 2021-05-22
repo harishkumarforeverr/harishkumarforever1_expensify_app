@@ -4,7 +4,7 @@ import ExpenseListFilters from "./ExpensesListFilters";
 import ExpensesSummary from "./ExpensesSummary";
 
 const ExpensifyDashBoard = () => (
-    <div> 
+    <div className="marginComponent"> 
         <ExpensesSummary />
         <ExpenseListFilters />
         <ExpensesList />
