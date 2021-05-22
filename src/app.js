@@ -33,7 +33,7 @@ const jsx=(
 
 
 
-online mode
+// online mode
 ReactDOM.render(<h1>loading</h1>, document.getElementById("app"));  
 
 let isUserInterfaceRendered=false;
