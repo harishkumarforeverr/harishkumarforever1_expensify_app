@@ -20,7 +20,10 @@ module.exports=(env)=>{
   const envMode=env.production?"production":"development";
   const miniCssExtractPlugin=require("mini-css-extract-plugin"); 
   return {
-    entry:"./src/app.js",
+    entry:[ 
+    "./src/app.js",
+    "@babel/polyfill"
+    ],
     output:{
         path:path.join(__dirname,'public',"dist"),
         filename:"bundle.js"
