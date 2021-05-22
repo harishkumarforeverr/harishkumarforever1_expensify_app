@@ -1,8 +1,6 @@
 harish is enjoying git commands 
 
-
-
-
-
-
-
+//sublime tes
+ctr+r/g /p to search file
+ctr+i/f    to seach the text
+ctr+0 to open file exp;ore

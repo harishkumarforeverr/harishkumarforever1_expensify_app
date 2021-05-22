@@ -2,14 +2,14 @@ import moment from "moment";
 
 export default [{
     id:0,
-    description:"buy long note books",
+    description:"buy long note books Lorem",
     amount:30,
     notes:"buying the gun",
     createdAt:0
 },{
     id:1,
-    description:"my room rent",
-    amount:2500,
+    description:"Car",
+       amount:2500,
     notes:"my house rent",
     createdAt:moment(0).subtract(4,"days").valueOf()
 },{

@@ -1,23 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`src/test/components/EditExpensesPage ::::::::: toMatchSnapshot  1`] = `
-<div>
-  <ExpanseForm
-    expense={
-      Object {
-        "amount": 600,
-        "createdAt": 345600000,
-        "description": "phone Reacharge",
-        "id": 2,
-        "notes": "took creatied Card for my mom from SBI bank",
-      }
-    }
-    onSubmit={[Function]}
-  />
-  <button
-    onClick={[Function]}
+<div
+  className="marginComponent"
+>
+  <div
+    className="page-header"
   >
-    Remove
-  </button>
+    <div
+      className="content-container page-header__title"
+    >
+      <h1>
+        Edit Expense
+      </h1>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <ExpanseForm
+      expense={
+        Object {
+          "amount": 600,
+          "createdAt": 345600000,
+          "description": "phone Reacharge",
+          "id": 2,
+          "notes": "took creatied Card for my mom from SBI bank",
+        }
+      }
+      onSubmit={[Function]}
+    />
+    <button
+      className="button-secondary"
+      onClick={[Function]}
+    >
+      Remove Expense
+    </button>
+  </div>
 </div>
 `;

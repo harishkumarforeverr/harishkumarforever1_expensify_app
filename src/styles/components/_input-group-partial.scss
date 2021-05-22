@@ -1,6 +1,7 @@
 .input-group{
   display: flex;
   flex-direction: column;    
+  padding: $s-size;
   margin-bottom: $m-size;
   @media(min-width:$disktop-breakPoint){ 
     flex-direction: row;

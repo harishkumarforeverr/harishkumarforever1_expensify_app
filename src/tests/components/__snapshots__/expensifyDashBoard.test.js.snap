@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test/componenet/ExpensifyDashBoard should render it coreectly  1`] = `
-<div>
+<div
+  className="marginComponent"
+>
   <Connect(ExpensesSummary) />
   <Connect(ExpensesListFilters) />
   <Connect(ExpensesList) />

@@ -1,29 +1,77 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render the expenses corrent total correctly with multiple expenses  1`] = `
-<div>
-  <h3>
-    viewing 
-    8
-     
-    expenses
-     totalling 
-    98237
-     
-  </h3>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <div
+      className="page-header__title"
+    >
+      <h1>
+         Viewing 
+        <span>
+          8
+        </span>
+         
+        expenses
+         totalling 
+        <span>
+          98237
+        </span>
+         
+      </h1>
+    </div>
+    <div
+      className="page-header__action"
+    >
+      <Link
+        className="button"
+        to="/create"
+      >
+         Add Expense(Item) 
+      </Link>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`should render the expenses corrent total correctly with single expenses  1`] = `
-<div>
-  <h3>
-    viewing 
-    1
-     
-    expense
-     totalling 
-    1003
-     
-  </h3>
+<div
+  className="page-header"
+>
+  <div
+    className="content-container"
+  >
+    <div
+      className="page-header__title"
+    >
+      <h1>
+         Viewing 
+        <span>
+          1
+        </span>
+         
+        expense
+         totalling 
+        <span>
+          1003
+        </span>
+         
+      </h1>
+    </div>
+    <div
+      className="page-header__action"
+    >
+      <Link
+        className="button"
+        to="/create"
+      >
+         Add Expense(Item) 
+      </Link>
+    </div>
+  </div>
 </div>
 `;

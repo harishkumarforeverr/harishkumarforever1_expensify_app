@@ -12,7 +12,7 @@ test("import selectExpenses from  ../../selectors/expenses ::::::::  should filt
       endDate:undefined
     }
     const result=selectedExpenses(expenses,filters);
-    expect(result).toEqual([ expenses[2],expenses[0],expenses[1] ] );
+    expect(result).toEqual([ expenses[2],expenses[0] ] );
 })
 
 // complted

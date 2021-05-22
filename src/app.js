@@ -13,7 +13,7 @@ import "./firebase/firebase";
 import expenses from "./tests/fixtures/expenses"; 
 import {Login,Logout} from "./actions/auth";
 // import "./playground/promises";
-
+import LoginPage from "./components/LoadingPage";
 const store=configStore();   
 
 const jsx=(
@@ -25,16 +25,16 @@ const jsx=(
 ) 
 
 
-// //offline mode
-// ReactDOM.render(jsx, document.getElementById("app")); 
+//offline mode
+//  ReactDOM.render(jsx, document.getElementById("app"));
 // store.dispatch(setExpenses(expenses));
-// // offline mode ends her
+// offline mode ends her
 
 
 
 
 // online mode
-ReactDOM.render(<h1>loading</h1>, document.getElementById("app"));  
+ReactDOM.render(<LoginPage />, document.getElementById("app")); 
 
 let isUserInterfaceRendered=false;
 const AppRenderer=()=>{ 

@@ -1,0 +1,12 @@
+.breakpoint-for-mobile{
+    @media(min-width:$disktop-breakPoint){ // anthi min 45rem cross aethi e rule is appliacable
+       display: none;
+    }
+}
+
+.breakpoint-for-desktop{ 
+    @media(max-width:$disktop-breakPoint+0.2){  // 
+         display: none;
+    }
+    
+}

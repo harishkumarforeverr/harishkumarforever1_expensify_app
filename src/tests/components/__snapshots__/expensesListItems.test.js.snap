@@ -1,25 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test/componnets/expensesListItems  should render expensesListItems correctly 1`] = `
-<div>
-  <Link
-    to="/edit/1"
-  >
-     
+<Link
+  className="list-items"
+  to="/edit/1"
+>
+  <div>
     <h3
-      className="expenses"
+      className="list-item__title"
     >
          
-      my room rent
+      Car
        
     </h3>
-     
-  </Link>
-  <p>
-    $25.0000
-    --
-    December 28th, 1969
-  </p>
-  <hr />
-</div>
+    <span
+      className="list-item__subtitle"
+    >
+      December 28th, 1969
+    </span>
+  </div>
+  <div>
+    <h3
+      className="list-item__amount"
+    >
+      $25.0000
+    </h3>
+  </div>
+</Link>
 `;

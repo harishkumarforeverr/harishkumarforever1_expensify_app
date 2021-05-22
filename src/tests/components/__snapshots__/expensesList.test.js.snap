@@ -1,11 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test/components/expensesList should render expensesList correctly  1`] = `
-<div>
+<div
+  className="content-container"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="breakpoint-for-mobile"
+    >
+      Expeneses
+    </div>
+    <div
+      className="breakpoint-for-desktop"
+    >
+      Expenese
+    </div>
+    <div
+      className="breakpoint-for-desktop"
+    >
+      Amount
+    </div>
+  </div>
   <ExpensesListItems
     amount={30}
     createdAt={0}
-    description="buy long note books"
+    description="buy long note books Lorem"
     id={0}
     key="0"
     notes="buying the gun"
@@ -13,7 +34,7 @@ exports[`test/components/expensesList should render expensesList correctly  1`] 
   <ExpensesListItems
     amount={2500}
     createdAt={-345600000}
-    description="my room rent"
+    description="Car"
     id={1}
     key="1"
     notes="my house rent"
@@ -30,9 +51,39 @@ exports[`test/components/expensesList should render expensesList correctly  1`] 
 `;
 
 exports[`test/components/expensesList should render expensesList correctly  2`] = `
-<div>
-  <h4>
-    Zero exoenses  
-  </h4>
+<div
+  className="content-container"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="breakpoint-for-mobile"
+    >
+      Expeneses
+    </div>
+    <div
+      className="breakpoint-for-desktop"
+    >
+      Expenese
+    </div>
+    <div
+      className="breakpoint-for-desktop"
+    >
+      Amount
+    </div>
+  </div>
+  <div>
+    <div
+      className="list-item__noExpenses"
+    >
+      <h4>
+        Zero exoenses  
+      </h4>
+      <h5>
+        start adding a new expenses to your Mana budget-App 
+      </h5>
+    </div>
+  </div>
 </div>
 `;
